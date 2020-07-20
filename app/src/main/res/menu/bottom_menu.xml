@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/summoner_record"
+        android:enabled="true"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="record"/>
+
+    <item
+        android:id="@+id/summoner_graph"
+        android:enabled="true"
+        android:icon="@drawable/ic_show_chart_black_24dp"
+        android:title="graph"/>
+
+    <item
+        android:id="@+id/summoner_best"
+        android:enabled="true"
+        android:icon="@drawable/ic_whatshot_black_24dp"
+        android:title="best"/>
+
+</menu>

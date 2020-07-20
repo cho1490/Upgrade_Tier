@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="60sp"
+    android:layout_margin="8sp"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/leftBlock"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_marginStart="15sp"
+           android:layout_marginTop="5sp"
+           android:layout_marginBottom="5sp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toStartOf="@id/rightBlock"
+           app:layout_constraintHorizontal_weight="1">
+
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:id="@+id/iv_champion2"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"/>
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/rightBlock"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           app:layout_constraintStart_toEndOf="@id/leftBlock"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_weight="6">
+
+           <TextView
+               android:id="@+id/tv_win_percent"
+               android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_marginStart="10sp"
+               android:textColor="#404040"
+               android:gravity="center"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toStartOf="@id/percentBar"
+               app:layout_constraintHorizontal_weight="2"/>
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:id="@+id/percentBar"
+               android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_marginStart="30sp"
+               android:layout_marginTop="20sp"
+               android:layout_marginEnd="20sp"
+               app:layout_constraintStart_toEndOf="@id/tv_win_percent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_weight="4">
+
+               <TextView
+                   android:id="@+id/tv_win_cnt"
+                   android:layout_width="0dp"
+                   android:layout_height="20sp"
+                   android:gravity="start"
+                   android:textSize="12sp"
+                   android:textColor="#FFFFFF"
+                   app:layout_constraintHorizontal_chainStyle="packed"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintEnd_toStartOf="@id/tv_lose_cnt"
+                   android:background="#6294F3" />
+
+               <TextView
+                   android:id="@+id/tv_lose_cnt"
+                   android:layout_width="0dp"
+                   android:layout_height="20sp"
+                   android:gravity="end"
+                   android:textSize="12sp"
+                   android:textColor="#FFFFFF"
+                   app:layout_constraintHorizontal_chainStyle="packed"
+                   app:layout_constraintStart_toEndOf="@id/tv_win_cnt"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   android:background="#F45C73"/>
+
+           </androidx.constraintlayout.widget.ConstraintLayout>
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

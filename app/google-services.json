@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "523083558454",
+    "firebase_url": "https://loltierup.firebaseio.com",
+    "project_id": "loltierup",
+    "storage_bucket": "loltierup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523083558454:android:b1514d1378299e9959f297",
+        "android_client_info": {
+          "package_name": "sjsh.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523083558454-jlvl58p589jlchqf5bljk7scg7eitpeo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQSiPNZGOTEXHf1PwIGpyUl49iHBaZrRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523083558454-jlvl58p589jlchqf5bljk7scg7eitpeo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6713667729006874~4165571257"
+    }
+  ],
+  "configuration_version": "1"
+}
