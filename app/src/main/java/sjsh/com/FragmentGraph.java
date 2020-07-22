@@ -80,7 +80,7 @@ public class FragmentGraph extends Fragment {
             loadingDialog.startLoadingDialog();
             loadingDialog.onCancelable();
             loadingDialog.offProgressBar();
-            loadingDialog.setMessage("죄송합니다. 오류입니다 :(\n 반복될 경우 메인화면 하단에 이메일로 문의 주세요!!");
+            loadingDialog.setMessage("죄송합니다. 오류입니다 :(\n반복될 경우 메인화면 하단\n이메일로 문의 주세요!!");
             loadingDialog.onButtonForStay();
         }
     }
@@ -124,6 +124,9 @@ public class FragmentGraph extends Fragment {
                 doc = Jsoup.parse(data);
 
                 final Element Entirely_infoE = doc.selectFirst("table.GameAverageStats");
+                if(Entirely_infoE == null)
+                    return null;
+
                 win = Integer.parseInt(Entirely_infoE.child(0).child(0).child(0).child(0).child(1).text());
                 lose = Integer.parseInt(Entirely_infoE.child(0).child(0).child(0).child(0).child(2).text());
                 division = 100/(win+lose);
@@ -170,7 +173,6 @@ public class FragmentGraph extends Fragment {
 
                 Handler handler = new Handler(Looper.getMainLooper());
                 handler.post(new Runnable() {
-                    int cnt= 0;
                     @Override
                     public void run() {
                         for (int i = 0; i < champion_url.size(); i++) {

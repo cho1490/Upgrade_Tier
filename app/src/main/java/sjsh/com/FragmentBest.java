@@ -88,7 +88,7 @@ public class FragmentBest extends Fragment {
             loadingDialog.startLoadingDialog();
             loadingDialog.onCancelable();
             loadingDialog.offProgressBar();
-            loadingDialog.setMessage("죄송합니다. 오류입니다 :(\n 반복될 경우 메인화면 하단에 이메일로 문의 주세요!!");
+            loadingDialog.setMessage("죄송합니다. 오류입니다 :(\n반복될 경우 메인화면 하단\n이메일로 문의 주세요!!");
             loadingDialog.onButtonForStay();
         }
     }
