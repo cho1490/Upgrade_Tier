@@ -79,10 +79,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 et_nickname = findViewById(R.id.et_nickname);
-                url = firstUrl + et_nickname.getText().toString().replace("\n", "");
-                Intent intent = new Intent(getApplicationContext(), SummonerActivity.class);
-                intent.putExtra("url", url);
-                startActivity(intent);
+                if(!et_nickname.getText().toString().equals("")){
+                    url = firstUrl + et_nickname.getText().toString().replace("\n", "");
+                    Intent intent = new Intent(getApplicationContext(), SummonerActivity.class);
+                    intent.putExtra("url", url);
+                    startActivity(intent);
+                }
+                else{
+                    loadingDialog.startLoadingDialog();
+                    loadingDialog.onCancelable();
+                    loadingDialog.offProgressBar();
+                    loadingDialog.setMessage("닉네임을 입력해주세요.");
+                    loadingDialog.onButtonForStay();
+                }
             }
         });
 
