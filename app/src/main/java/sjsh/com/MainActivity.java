@@ -37,32 +37,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {}
         });
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-6713667729006874/8545645874"); // //ca-app-pub-3940256099942544/1033173712
+        mInterstitialAd = new InterstitialAd(MainActivity.this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-6713667729006874/4863026514");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         mInterstitialAd.setAdListener(new AdListener(){
-            /*@Override
+            @Override
             public void onAdFailedToLoad(int i) {
-                String errorMsg = "?";
+                String errorMsg = "";
                 loadingDialog.startLoadingDialog();
                 loadingDialog.onCancelable();
                 loadingDialog.offProgressBar();
                 if(AdRequest.ERROR_CODE_INTERNAL_ERROR == i){
-                    errorMsg = "Something happened internally; for instance, an invalid response was received from the ad server.";
+                    errorMsg = "서버에 연결 할 수 없습니다 :(";
                 }else if(AdRequest.ERROR_CODE_INVALID_REQUEST == i){
-                    errorMsg = "The ad request was invalid; for instance, the ad unit ID was incorrect.";
+                    errorMsg = "올바르지 않은 광고 입니다 :(";
                 }else if(AdRequest.ERROR_CODE_NETWORK_ERROR  == i){
-                    errorMsg = "The ad request was unsuccessful due to network connectivity.";
+                    errorMsg = "네트워크에 연결할 수 없습니다 :(";
                 }else if(AdRequest.ERROR_CODE_NO_FILL == i){
-                    errorMsg = "The ad request was successful, but no ad was returned due to lack of ad inventory.";
+                    errorMsg = "시청 가능한 광고가 없습니다 :(";
                 }else{
-                    errorMsg = "오류...";
+                    errorMsg = "오류 :(";
                 }
                 loadingDialog.setMessage(errorMsg);
                 loadingDialog.onButtonForStay();
                 super.onAdFailedToLoad(i);
-            }*/
-
+            }
             @Override
             public void onAdClosed() {
                 loadingDialog.startLoadingDialog();
@@ -73,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onAdClosed();
             }
         });
+
 
         btn_search = findViewById(R.id.btn_search);
         btn_search.setOnClickListener(new View.OnClickListener() {

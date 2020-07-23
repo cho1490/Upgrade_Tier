@@ -46,15 +46,9 @@ public class FragmentBest extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_best, container, false);
 
-        //애드몹
-        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
         adContainerView = view.findViewById(R.id.ad_view_container);
         adView = new AdView(getContext());
-        adView.setAdUnitId("ca-app-pub-6713667729006874/8545645874"); // //ca-app-pub-3940256099942544/6300978111
+        adView.setAdUnitId("ca-app-pub-6713667729006874/8545645874");
         adContainerView.addView(adView);
         loadBanner();
 
