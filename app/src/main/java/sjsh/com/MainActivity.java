@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 loadingDialog.startLoadingDialog();
                 loadingDialog.onCancelable();
                 loadingDialog.offProgressBar();
-                loadingDialog.setMessage("감사합니다. :)");
+                loadingDialog.setMessage("감사합니다 :)");
                 loadingDialog.onButtonForStay();
                 super.onAdClosed();
             }
@@ -101,8 +101,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
-                } else {
-                    System.out.println("csh");
                 }
             }
         });
