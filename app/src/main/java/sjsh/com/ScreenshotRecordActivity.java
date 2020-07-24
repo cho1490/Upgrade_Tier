@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,12 +18,15 @@ import android.util.DisplayMetrics;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -51,21 +56,22 @@ public class ScreenshotRecordActivity extends AppCompatActivity {
             public void run()
             {
                 File screenShot = ScreenShot(viewToBitmap(recyclerView)); //여기에 딜레이 후 시작할 작업들을 입력
+                System.out.println("csh : " + Uri.fromFile(screenShot));
+
                 if(screenShot!=null){
                     //갤러리에 추가
                     sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(screenShot)));
+                    finish();
                 }
-                finish();
             }
-        }, 1);
+        }, 1000);
 
     }
 
-
     public File ScreenShot(Bitmap bitmap){
-        SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat format1 = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
         Date time = new Date();
-        String fileName = format1.format(time);
+        String fileName = format1.format(time)+".JPG";
 
         File file = new File(Environment.getExternalStorageDirectory()+"/Pictures", fileName); // Pictures 폴더
         FileOutputStream os = null;
@@ -81,18 +87,20 @@ public class ScreenshotRecordActivity extends AppCompatActivity {
         return file;
     }
 
+
     public static Bitmap viewToBitmap(View view) {
         Bitmap bitmap = Bitmap.createBitmap(view.getWidth(),
                 view.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
-        if (view instanceof SurfaceView) {
+        canvas.drawARGB(100, 250, 250, 250);
+
+        if(view instanceof SurfaceView) {
             SurfaceView surfaceView = (SurfaceView) view;
             surfaceView.setZOrderOnTop(true);
             surfaceView.draw(canvas);
             surfaceView.setZOrderOnTop(false);
             return bitmap;
-        } else {
-            //For ViewGroup & View
+        }else{
             view.draw(canvas);
             return bitmap;
         }
