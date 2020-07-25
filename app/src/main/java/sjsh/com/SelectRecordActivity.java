@@ -12,14 +12,11 @@ import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class SelectRecordActivity extends AppCompatActivity {
-
-    FrameLayout adContainerView;
 
     RecyclerView recyclerView;
     RecordRecyclerAdapter adapter;
