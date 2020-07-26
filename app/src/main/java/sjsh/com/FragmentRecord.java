@@ -92,8 +92,10 @@ public class FragmentRecord extends Fragment {
         btn_recordScreenshot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ExtendedDataHolder extras = ExtendedDataHolder.getInstance();
+                extras.putExtra("other", adapter.getListData());
                 Intent intent = new Intent(getActivity(), SelectRecordActivity.class);
-                intent.putExtra("data",adapter.getListData());
+                //intent.putExtra("data",adapter.getListData());
                 startActivity(intent);
             }
         });

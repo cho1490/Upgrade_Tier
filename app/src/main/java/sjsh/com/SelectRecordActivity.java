@@ -40,8 +40,14 @@ public class SelectRecordActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecordRecyclerAdapter(dm.widthPixels);
         recyclerView.setAdapter(adapter);
-        Intent intent = getIntent();
-        adapter.setListData((ArrayList<RecordData>)intent.getSerializableExtra("data"));
+
+        ArrayList<RecordData> listData = new ArrayList<>();
+        ExtendedDataHolder extras = ExtendedDataHolder.getInstance();
+        if (extras.hasExtra("other")) {
+            listData = (ArrayList<RecordData>)extras.getExtra("other");
+        }
+
+        adapter.setListData(listData);
         adapter.notifyDataSetChanged();
         adapter.setScreenShot(true);
 
