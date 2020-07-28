@@ -73,13 +73,13 @@ public class SelectRecordActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.screenshot_save:
-                CheckSelfPermission();
+                checkSelfPermission();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void CheckSelfPermission(){
+    public void checkSelfPermission(){
        String temp = " ";
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
@@ -96,7 +96,7 @@ public class SelectRecordActivity extends AppCompatActivity {
 
     }
 
-    public void GetScreenShot(){
+    public void getScreenshot(){
         ExtendedDataHolder extras = ExtendedDataHolder.getInstance();
         extras.clear();
         extras.putExtra("list", adapter.getSelectedListData());
@@ -108,7 +108,7 @@ public class SelectRecordActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         // 권한 허용한 경우
         if (requestCode == 1){
-            GetScreenShot();
+            getScreenshot();
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
