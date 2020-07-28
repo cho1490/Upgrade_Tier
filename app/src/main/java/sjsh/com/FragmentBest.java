@@ -245,7 +245,11 @@ public class FragmentBest extends Fragment {
 
                 if(bestIndex != 20) {
                     isBestChampion = true;
-                    bestChampion_url = "https://opgg-static.akamaized.net/images/lol/champion/" + champion.get(bestIndex)
+                    String bestChampion = "";
+                    if(champion.get(bestIndex).contains("&"))
+                        bestChampion = "Nunu";
+
+                    bestChampion_url = "https://opgg-static.akamaized.net/images/lol/champion/" + bestChampion
                             .replace(" ", "")
                             .replace("'", "") + ".png?image=q_auto,w_46&v=1591083841";
 
