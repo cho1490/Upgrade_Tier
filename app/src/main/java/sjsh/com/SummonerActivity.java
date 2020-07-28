@@ -3,6 +3,7 @@ package sjsh.com;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -29,6 +30,12 @@ public class SummonerActivity extends AppCompatActivity {
     TextView textView;
 
     String url;
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.clear();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

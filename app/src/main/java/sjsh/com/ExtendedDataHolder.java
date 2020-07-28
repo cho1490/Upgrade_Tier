@@ -9,6 +9,7 @@ public class ExtendedDataHolder {
     private final Map<String, Object> extras = new HashMap<>();
 
     private ExtendedDataHolder() {
+
     }
 
     public static ExtendedDataHolder getInstance() {

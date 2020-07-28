@@ -93,16 +93,14 @@ public class FragmentRecord extends Fragment {
             @Override
             public void onClick(View v) {
                 ExtendedDataHolder extras = ExtendedDataHolder.getInstance();
-                extras.putExtra("other", adapter.getListData());
+                extras.putExtra("list", adapter.getListData());
                 Intent intent = new Intent(getActivity(), SelectRecordActivity.class);
-                //intent.putExtra("data",adapter.getListData());
                 startActivity(intent);
             }
         });
 
         return view;
     }
-
 
     private void getRecord() {
         Record AsyncTask = new Record();
@@ -155,6 +153,13 @@ public class FragmentRecord extends Fragment {
                 gameName = "우르프";
             else if(game_mode.equals("Bot"))
                 gameName = "봇전";
+            else if(game_mode.equals("Special Mode")){
+                gameName = "돌격! 넥서스";
+            }
+            /*
+            else{
+                System.out.println("csh : " + game_mode);
+            }*/
 
             return gameName;
         }

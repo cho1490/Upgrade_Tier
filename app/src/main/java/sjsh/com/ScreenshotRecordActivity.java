@@ -46,8 +46,14 @@ public class ScreenshotRecordActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecordRecyclerAdapter(dm.widthPixels);
         recyclerView.setAdapter(adapter);
-        Intent intent = getIntent();
-        adapter.setListData((ArrayList<RecordData>)intent.getSerializableExtra("data"));
+
+        ArrayList<RecordData> listData = new ArrayList<>();
+        ExtendedDataHolder extras = ExtendedDataHolder.getInstance();
+        if (extras.hasExtra("list")) {
+            listData = (ArrayList<RecordData>)extras.getExtra("list");
+        }
+
+        adapter.setListData(listData);
         adapter.notifyDataSetChanged();
 
         new Handler().postDelayed(new Runnable()
@@ -56,12 +62,12 @@ public class ScreenshotRecordActivity extends AppCompatActivity {
             public void run()
             {
                 File screenShot = ScreenShot(viewToBitmap(recyclerView)); //여기에 딜레이 후 시작할 작업들을 입력
-                System.out.println("csh : " + Uri.fromFile(screenShot));
-
                 if(screenShot!=null){
                     //갤러리에 추가
                     sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(screenShot)));
                     finish();
+                }else{
+                    System.out.println("csh : null");
                 }
             }
         }, 1000);

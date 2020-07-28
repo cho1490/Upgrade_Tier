@@ -75,7 +75,7 @@ public class RecordRecyclerAdapter extends RecyclerView.Adapter<RecordRecyclerAd
 
     @Override
     public int getItemCount() {
-        return listData.size();
+        return  listData == null ? 0 : listData.size();
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
