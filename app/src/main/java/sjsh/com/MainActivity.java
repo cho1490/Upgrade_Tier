@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), SummonerActivity.class);
                     intent.putExtra("url", url);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 }
                 else{
                     loadingDialog.startLoadingDialog();
@@ -117,4 +118,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
