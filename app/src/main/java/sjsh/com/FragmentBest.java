@@ -202,34 +202,32 @@ public class FragmentBest extends Fragment {
                 final Elements infoE = doc.select("div.GameItemList div.GameItemWrap div.GameItem");
 
                 for (Element info : infoE) {
-                    if (!info.child(0).child(0).child(0).text().equals("Ranked Solo"))
-                        continue;
-
-                    String championName = info.child(0).child(1).child(3).child(0).text();
-                    int kill = Integer.parseInt(info.child(0).child(2).child(0).child(0).text());
-                    int death = Integer.parseInt(info.child(0).child(2).child(0).child(1).text());
-                    int assist = Integer.parseInt(info.child(0).child(2).child(0).child(2).text());
-                    int kda_percent = Integer.parseInt(info.child(0).child(3).child(2).text().split(" ")[1].replace("%", ""));
-                    int pinkWard = 0;
-                    if (info.child(0).child(4).childrenSize() == 2){
-                        pinkWard = Integer.parseInt(info.child(0).child(4).child(1).child(1).text());
-                    }
-
-                    String badge = "";
-
-                    if (!isChampion(championName)) {
-                        champion.add(info.child(0).child(1).child(3).child(0).text());
-                        if(info.child(0).child(2).childrenSize()>2) {
-                            int size = info.child(0).child(2).childrenSize();
-                            badge = info.child(0).child(2).child(size-1).child(0).text();
+                    if (info.child(0).child(0).child(0).text().equals("Ranked Solo")) {
+                        System.out.println("csh : " + info.child(0).child(0).child(0).text());
+                        String championName = info.child(0).child(1).child(3).child(0).text();
+                        int kill = Integer.parseInt(info.child(0).child(2).child(0).child(0).text());
+                        int death = Integer.parseInt(info.child(0).child(2).child(0).child(1).text());
+                        int assist = Integer.parseInt(info.child(0).child(2).child(0).child(2).text());
+                        int kda_percent = Integer.parseInt(info.child(0).child(3).child(2).text().split(" ")[1].replace("%", ""));
+                        int pinkWard = 0;
+                        if (info.child(0).child(4).childrenSize() == 2) {
+                            pinkWard = Integer.parseInt(info.child(0).child(4).child(1).child(1).text());
                         }
-                        score.add(getScore(kill, death, assist, kda_percent, pinkWard, badge));
-                        matchCount.add(1);
-                    }
-                    else {
-                        int currentIndex = getChampionIndex(championName);
-                        score.set(currentIndex, (score.get(currentIndex) + getScore(kill, death, assist, kda_percent, pinkWard, badge))/2);
-                        matchCount.set(currentIndex, matchCount.get(currentIndex)+1);
+
+                        String badge = "";
+                        if (!isChampion(championName)) {
+                            champion.add(info.child(0).child(1).child(3).child(0).text());
+                            if (info.child(0).child(2).childrenSize() > 2) {
+                                int size = info.child(0).child(2).childrenSize();
+                                badge = info.child(0).child(2).child(size - 1).child(0).text();
+                            }
+                            score.add(getScore(kill, death, assist, kda_percent, pinkWard, badge));
+                            matchCount.add(1);
+                        } else {
+                            int currentIndex = getChampionIndex(championName);
+                            score.set(currentIndex, (score.get(currentIndex) + getScore(kill, death, assist, kda_percent, pinkWard, badge)) / 2);
+                            matchCount.set(currentIndex, matchCount.get(currentIndex) + 1);
+                        }
                     }
                 }
 
@@ -248,24 +246,32 @@ public class FragmentBest extends Fragment {
                     String bestChampion = "";
                     if(champion.get(bestIndex).contains("&"))
                         bestChampion = "Nunu";
+                    else
+                        bestChampion = champion.get(bestIndex);
 
+                    //System.out.println("csh : " + bestChampion);
                     bestChampion_url = "https://opgg-static.akamaized.net/images/lol/champion/" + bestChampion
                             .replace(" ", "")
                             .replace("'", "") + ".png?image=q_auto,w_46&v=1591083841";
 
-                    avgScoreText = score.get(bestIndex) + " 점";
+                    if(score.get(bestIndex) == 100)
+                        avgScoreText = "Perfect!";
+                    else
+                        avgScoreText = score.get(bestIndex) + " 점";
 
                     for(Element info : infoE){
-                        if (info.child(0).child(1).child(3).child(0).text().equals(champion.get(bestIndex))) {
-                            sumKill += Integer.parseInt(info.child(0).child(2).child(0).child(0).text());
-                            sumDeath += Integer.parseInt(info.child(0).child(2).child(0).child(1).text());
-                            sumAssist += Integer.parseInt(info.child(0).child(2).child(0).child(2).text());
+                        if (info.child(0).child(0).child(0).text().equals("Ranked Solo")) {
+                            if (info.child(0).child(1).child(3).child(0).text().equals(champion.get(bestIndex))) {
+                                sumKill += Integer.parseInt(info.child(0).child(2).child(0).child(0).text());
+                                sumDeath += Integer.parseInt(info.child(0).child(2).child(0).child(1).text());
+                                sumAssist += Integer.parseInt(info.child(0).child(2).child(0).child(2).text());
 
-                            sumLevel += Integer.parseInt(info.child(0).child(3).child(0).text().replace("Level",""));
-                            sumMinion += Integer.parseInt(info.child(0).child(3).child(1).child(0).text().split(" ")[0]);
-                            sumPercent += Integer.parseInt(info.child(0).child(3).child(2).text().split(" ")[1].replace("%",""));
-                            if(info.child(0).child(4).childrenSize() == 2)
-                                sumPinkWard += Integer.parseInt(info.child(0).child(4).child(1).child(1).text());
+                                sumLevel += Integer.parseInt(info.child(0).child(3).child(0).text().replace("Level", ""));
+                                sumMinion += Integer.parseInt(info.child(0).child(3).child(1).child(0).text().split(" ")[0]);
+                                sumPercent += Integer.parseInt(info.child(0).child(3).child(2).text().split(" ")[1].replace("%", ""));
+                                if (info.child(0).child(4).childrenSize() == 2)
+                                    sumPinkWard += Integer.parseInt(info.child(0).child(4).child(1).child(1).text());
+                            }
                         }
                     }
 
@@ -273,9 +279,11 @@ public class FragmentBest extends Fragment {
                         avgKDAText = "Perfect!";
                     else
                         avgKDAText = Math.round(((sumKill+sumAssist)/sumDeath)*10)/10.0 + "";
-                    avgLevelText = sumLevel/matchCount.get(bestIndex) + "";
-                    avgMinionText = sumMinion/matchCount.get(bestIndex) + " CS";
-                    avgPercentText = sumPercent/matchCount.get(bestIndex) + "%";
+
+                    int matchNum = matchCount.get(bestIndex);
+                    avgLevelText = sumLevel/matchNum + "";
+                    avgMinionText = sumMinion/matchNum + " CS";
+                    avgPercentText = sumPercent/matchNum + "%";
                     avgPinkWardText = Math.round(sumPinkWard/matchCount.get(bestIndex)*10)/10.0 + " 개";
                 }
             } catch (Exception e) {

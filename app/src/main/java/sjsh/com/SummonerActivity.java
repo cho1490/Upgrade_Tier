@@ -1,9 +1,9 @@
 package sjsh.com;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -43,6 +43,7 @@ public class SummonerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_summoner);
 
         Toolbar toolbar = findViewById(R.id.toolBar);
+        toolbar.setBackgroundColor(Color.parseColor("#FFFFFF"));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
