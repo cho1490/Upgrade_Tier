@@ -142,13 +142,13 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:textSize="15sp" />
+                            android:textSize="15dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="/"
-                            android:textSize="15sp" />
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/tv_death"
@@ -157,13 +157,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:textColor="#DC1414"
-                            android:textSize="15sp" />
+                            android:textSize="15dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="/"
-                            android:textSize="15sp" />
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/tv_assist"
@@ -171,7 +171,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:textSize="15sp" />
+                            android:textSize="15dp" />
 
                     </LinearLayout>
 
@@ -180,7 +180,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textSize="12sp"/>
+                        android:textSize="12dp"/>
 
                 </LinearLayout>
 
@@ -277,7 +277,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:textColor="#969696"
-                android:textSize="13sp"
+                android:textSize="13dp"
                 android:gravity="bottom"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/tv_game_ago"
@@ -288,7 +288,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:textColor="#969696"
-                android:textSize="13sp"
+                android:textSize="13dp"
                 android:gravity="center_vertical"
                 app:layout_constraintTop_toBottomOf="@id/tv_game_mode"
                 app:layout_constraintBottom_toTopOf="@id/tv_badge"
@@ -298,7 +298,7 @@
                 android:id="@+id/tv_badge"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 android:gravity="top"
                 android:textColor="#FF9800"
                 app:layout_constraintTop_toBottomOf="@id/tv_game_ago"

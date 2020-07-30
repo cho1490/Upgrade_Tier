@@ -43,7 +43,7 @@ public class SummonerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_summoner);
 
         Toolbar toolbar = findViewById(R.id.toolBar);
-        toolbar.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        toolbar.setBackgroundColor(Color.parseColor("#FFA0A7C3"));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
