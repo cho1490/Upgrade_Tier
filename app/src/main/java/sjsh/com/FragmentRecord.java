@@ -287,11 +287,8 @@ public class FragmentRecord extends Fragment {
                         result.add("승");
                     else if (game_info.child(3).text().equals("Defeat"))
                         result.add("패");
-                    else //if (game_info.child(3).text().equals("Defeat"))패
-                    {
+                    else if (game_info.child(3).text().equals("Remake"))
                         result.add("리");
-                        System.out.println("csh : " + game_info.child(3).text());
-                    }
 
 
 

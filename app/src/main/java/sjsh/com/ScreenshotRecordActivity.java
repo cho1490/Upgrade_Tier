@@ -56,8 +56,6 @@ public class ScreenshotRecordActivity extends AppCompatActivity {
                     //갤러리에 추가
                     sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(screenShot)));
                     finish();
-                }else{
-                    System.out.println("csh : null");
                 }
             }
         }, 1000);

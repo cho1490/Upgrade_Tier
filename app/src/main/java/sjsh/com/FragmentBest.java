@@ -117,7 +117,6 @@ public class FragmentBest extends Fragment {
         double sumKill = 0;
         double sumDeath = 0;
         double sumAssist = 0;
-        double sumKDA = 0;
 
         int sumLevel = 0;
         int sumMinion = 0;
@@ -203,7 +202,6 @@ public class FragmentBest extends Fragment {
 
                 for (Element info : infoE) {
                     if (info.child(0).child(0).child(0).text().equals("Ranked Solo")) {
-                        System.out.println("csh : " + info.child(0).child(0).child(0).text());
                         String championName = info.child(0).child(1).child(3).child(0).text();
                         int kill = Integer.parseInt(info.child(0).child(2).child(0).child(0).text());
                         int death = Integer.parseInt(info.child(0).child(2).child(0).child(1).text());
@@ -260,8 +258,8 @@ public class FragmentBest extends Fragment {
                         avgScoreText = score.get(bestIndex) + " 점";
 
                     for(Element info : infoE){
-                        if (info.child(0).child(0).child(0).text().equals("Ranked Solo")) {
-                            if (info.child(0).child(1).child(3).child(0).text().equals(champion.get(bestIndex))) {
+                        if (info.child(0).child(1).child(3).child(0).text().equals(champion.get(bestIndex))){
+                            if (info.child(0).child(0).child(0).text().equals("Ranked Solo") && !info.child(0).child(0).child(3).text().equals("Remake")) {
                                 sumKill += Integer.parseInt(info.child(0).child(2).child(0).child(0).text());
                                 sumDeath += Integer.parseInt(info.child(0).child(2).child(0).child(1).text());
                                 sumAssist += Integer.parseInt(info.child(0).child(2).child(0).child(2).text());
