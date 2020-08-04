@@ -14,7 +14,7 @@
         <LinearLayout
             android:id="@+id/top_block"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:orientation="horizontal"
             android:weightSum="6"
             android:layout_marginTop="5dp"

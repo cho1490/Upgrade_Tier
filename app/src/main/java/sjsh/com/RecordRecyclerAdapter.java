@@ -20,13 +20,12 @@ import java.util.ArrayList;
 public class RecordRecyclerAdapter extends RecyclerView.Adapter<RecordRecyclerAdapter.ItemViewHolder> {
 
     private ArrayList<RecordData> listData = new ArrayList<>();
-    private int width;
 
     private SparseBooleanArray mSelectedItems = new SparseBooleanArray(0);
     boolean isScreenShot = false;
 
-    public RecordRecyclerAdapter(int width){
-        this.width = width;
+    public RecordRecyclerAdapter(){
+
     }
 
     @NonNull
@@ -39,7 +38,6 @@ public class RecordRecyclerAdapter extends RecyclerView.Adapter<RecordRecyclerAd
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         holder.onBind(listData.get(position));
-        holder.cardView.getLayoutParams().height = width/6 + width/6/7;
 
         if ( mSelectedItems.get(position, false) ){
             holder.firstBackground.setBackgroundColor(Color.parseColor("#858585"));
@@ -140,6 +138,8 @@ public class RecordRecyclerAdapter extends RecyclerView.Adapter<RecordRecyclerAd
                 ll_background.setBackgroundColor(Color.parseColor("#5587E6"));
             } else if (data.getResult().equals("패")) {
                 ll_background.setBackgroundColor(Color.parseColor("#E6415A"));
+            } else if (data.getResult().equals("리")) {
+                ll_background.setBackgroundColor(Color.parseColor("#B6B6B6"));
             }
 
             tv_time.setText(data.getTime());

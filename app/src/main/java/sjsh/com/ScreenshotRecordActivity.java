@@ -32,10 +32,9 @@ public class ScreenshotRecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screenshot_record);
 
-        DisplayMetrics dm = this.getResources().getDisplayMetrics();
         recyclerView = findViewById(R.id.screenshot_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecordRecyclerAdapter(dm.widthPixels);
+        adapter = new RecordRecyclerAdapter();
         recyclerView.setAdapter(adapter);
 
         ArrayList<RecordData> listData = new ArrayList<>();
@@ -89,7 +88,7 @@ public class ScreenshotRecordActivity extends AppCompatActivity {
         Bitmap bitmap = Bitmap.createBitmap(view.getWidth(),
                 view.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
-        canvas.drawARGB(100, 250, 250, 250);
+        canvas.drawARGB(255, 230, 230, 230);
 
         if(view instanceof SurfaceView) {
             SurfaceView surfaceView = (SurfaceView) view;

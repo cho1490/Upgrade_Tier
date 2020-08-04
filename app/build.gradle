@@ -48,12 +48,12 @@ dependencies {
 
     // 이미지 url 로드
     implementation 'com.github.bumptech.glide:glide:4.10.0'
+
     // html 크롤링
     implementation 'org.jsoup:jsoup:1.13.1'
 
     // chart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-
     implementation 'com.anjlab.android.iab.v3:library:1.0.44'
 
     // riot 관련 라이브러리

@@ -38,11 +38,7 @@ public class FragmentRecord extends Fragment {
 
     private View view;
 
-    DisplayMetrics dm;
-
     Button btn_recordScreenshot;
-
-    LinearLayout top_block;
 
     RecyclerView recyclerView;
     RecordRecyclerAdapter adapter;
@@ -75,15 +71,10 @@ public class FragmentRecord extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_record, container, false);
 
-        top_block = view.findViewById(R.id.top_block);
-        //가로 세로 비율 맞추기
-        dm = getActivity().getResources().getDisplayMetrics();
-        top_block.getLayoutParams().height = dm.widthPixels/6;
-
         recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapter = new RecordRecyclerAdapter(dm.widthPixels);
+        adapter = new RecordRecyclerAdapter();
         recyclerView.setAdapter(adapter);
 
         getRecord();
@@ -294,8 +285,15 @@ public class FragmentRecord extends Fragment {
 
                     if (game_info.child(3).text().equals("Victory"))
                         result.add("승");
-                    else
+                    else if (game_info.child(3).text().equals("Defeat"))
                         result.add("패");
+                    else //if (game_info.child(3).text().equals("Defeat"))패
+                    {
+                        result.add("리");
+                        System.out.println("csh : " + game_info.child(3).text());
+                    }
+
+
 
                     time.add(game_info.child(4).text().split(" ")[0].replace("m", "분"));
                 }

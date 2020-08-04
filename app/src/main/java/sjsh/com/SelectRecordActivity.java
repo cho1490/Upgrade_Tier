@@ -41,10 +41,9 @@ public class SelectRecordActivity extends AppCompatActivity {
         textView = findViewById(R.id.title);
         textView.setText("전적 선택하기");
 
-        DisplayMetrics dm = this.getResources().getDisplayMetrics();
         recyclerView = findViewById(R.id.select_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecordRecyclerAdapter(dm.widthPixels);
+        adapter = new RecordRecyclerAdapter();
         recyclerView.setAdapter(adapter);
 
         ArrayList<RecordData> listData = new ArrayList<>();
