@@ -38,6 +38,8 @@ public class FragmentRecord extends Fragment {
 
     private View view;
 
+    LinearLayout top_block;
+
     Button btn_recordScreenshot;
 
     RecyclerView recyclerView;
@@ -70,6 +72,12 @@ public class FragmentRecord extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_record, container, false);
+
+        DisplayMetrics dm;
+        top_block = view.findViewById(R.id.top_block);
+        //가로 세로 비율 맞추기
+        dm = getActivity().getResources().getDisplayMetrics();
+        top_block.getLayoutParams().height = dm.widthPixels/6;
 
         recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());

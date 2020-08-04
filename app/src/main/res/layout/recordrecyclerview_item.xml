@@ -3,16 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
-    android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_margin="8sp"
     android:orientation="vertical"
     app:cardCornerRadius="5dp">
 
     <LinearLayout
         android:id="@+id/first_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="385dp"
+        android:layout_height="77dp"
         android:weightSum="10">
 
         <LinearLayout
