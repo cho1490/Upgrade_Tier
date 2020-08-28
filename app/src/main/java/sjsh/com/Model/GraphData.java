@@ -1,6 +1,6 @@
-package sjsh.com;
+package sjsh.com.Model;
 
-class GraphData {
+public class GraphData {
 
     int win_percent;
     String win_cnt;

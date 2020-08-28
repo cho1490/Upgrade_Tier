@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Activity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -17,6 +17,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+
+import sjsh.com.Fragment.FragmentBest;
+import sjsh.com.Fragment.FragmentGraph;
+import sjsh.com.Fragment.FragmentRecord;
+import sjsh.com.LoadingDialog;
+import sjsh.com.R;
 
 public class SummonerActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;

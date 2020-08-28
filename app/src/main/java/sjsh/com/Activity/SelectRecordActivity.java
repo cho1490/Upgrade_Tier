@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,6 +20,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import sjsh.com.Activity.ScreenshotRecordActivity;
+import sjsh.com.ExtendedDataHolder;
+import sjsh.com.R;
+import sjsh.com.Model.RecordData;
+import sjsh.com.RecordRecyclerAdapter;
 
 public class SelectRecordActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,10 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
+import sjsh.com.LoadingDialog;
+import sjsh.com.R;
+
 
 public class MainActivity extends AppCompatActivity {
 

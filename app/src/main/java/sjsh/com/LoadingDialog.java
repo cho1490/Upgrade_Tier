@@ -2,7 +2,6 @@ package sjsh.com;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +14,11 @@ public class LoadingDialog {
 
     private AlertDialog alertDialog;
 
-    LoadingDialog(Activity activity){
+    public LoadingDialog(Activity activity){
         this.activity = activity;
     }
 
-    void startLoadingDialog(){
+    public void startLoadingDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         LayoutInflater inflater = activity.getLayoutInflater();
         builder.setView(inflater.inflate(R.layout.custom_dialog, null));
@@ -29,25 +28,25 @@ public class LoadingDialog {
         alertDialog.show();
     }
 
-    void dismissDialog(){
+    public void dismissDialog(){
         alertDialog.dismiss();
     }
 
-    void offProgressBar(){
+    public void offProgressBar(){
         ProgressBar progressBar = alertDialog.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
     }
 
-    void setMessage(String message){
+    public void setMessage(String message){
         TextView textView = alertDialog.findViewById(R.id.textForMessage);
         textView.setText(message);
     }
 
-    void onCancelable(){
+    public void onCancelable(){
         alertDialog.setCancelable(true);
     }
 
-    void onButtonForFinish(){
+    public void onButtonForFinish(){
         Button button = alertDialog.findViewById(R.id.btn_dialogOk);
         button.setVisibility(View.VISIBLE);
         button.setOnClickListener(new Button.OnClickListener() {
@@ -59,7 +58,7 @@ public class LoadingDialog {
         });
     }
 
-    void onButtonForStay(){
+    public void onButtonForStay(){
         Button button = alertDialog.findViewById(R.id.btn_dialogOk);
         button.setVisibility(View.VISIBLE);
         button.setOnClickListener(new Button.OnClickListener() {
@@ -69,6 +68,5 @@ public class LoadingDialog {
             }
         });
     }
-
 
 }

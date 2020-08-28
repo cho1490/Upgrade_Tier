@@ -17,6 +17,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import sjsh.com.Model.RecordData;
+
 public class RecordRecyclerAdapter extends RecyclerView.Adapter<RecordRecyclerAdapter.ItemViewHolder> {
 
     private ArrayList<RecordData> listData = new ArrayList<>();
@@ -46,17 +48,17 @@ public class RecordRecyclerAdapter extends RecyclerView.Adapter<RecordRecyclerAd
         }
     }
 
-    void setScreenShot(boolean screenShot){ isScreenShot = screenShot; }
+    public void setScreenShot(boolean screenShot){ isScreenShot = screenShot; }
 
-    void addItem(RecordData data) {
+    public void addItem(RecordData data) {
         listData.add(data);
     }
 
-    ArrayList<RecordData> getListData(){
+    public ArrayList<RecordData> getListData(){
         return listData;
     }
 
-    ArrayList<RecordData> getSelectedListData(){
+    public ArrayList<RecordData> getSelectedListData(){
         ArrayList<RecordData> selectedListData = new ArrayList<>();
         for(int i = 0;i<listData.size();i++){
             if(mSelectedItems.get(i, false)){
@@ -66,7 +68,7 @@ public class RecordRecyclerAdapter extends RecyclerView.Adapter<RecordRecyclerAd
         return selectedListData;
     }
 
-    void setListData(ArrayList<RecordData> listData){
+    public void setListData(ArrayList<RecordData> listData){
         this.listData = listData;
         notifyDataSetChanged();
     }

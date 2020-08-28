@@ -22,16 +22,16 @@
             android:value="ca-app-pub-6713667729006874~4165571257"/>
         <!--ca-app-pub-3940256099942544~3347511713-->
 
-        <activity android:name=".ScreenshotRecordActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.ScreenshotRecordActivity" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SummonerActivity" />
-        <activity android:name=".SelectRecordActivity" />
+        <activity android:name=".Activity.SummonerActivity" />
+        <activity android:name=".Activity.SelectRecordActivity" />
     </application>
 
 </manifest>

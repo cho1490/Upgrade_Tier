@@ -1,8 +1,8 @@
-package sjsh.com;
+package sjsh.com.Model;
 
 import java.io.Serializable;
 
-class RecordData implements Serializable {
+public class RecordData implements Serializable {
 
     String result;
     String time;

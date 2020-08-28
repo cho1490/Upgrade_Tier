@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Fragment;
 
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -27,6 +27,11 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+
+import sjsh.com.Model.GraphData;
+import sjsh.com.GraphRecyclerAdapter;
+import sjsh.com.LoadingDialog;
+import sjsh.com.R;
 
 public class FragmentGraph extends Fragment {
 

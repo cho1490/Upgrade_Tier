@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Fragment;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -33,6 +33,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
+import sjsh.com.ExtendedDataHolder;
+import sjsh.com.LoadingDialog;
+import sjsh.com.R;
+import sjsh.com.Model.RecordData;
+import sjsh.com.RecordRecyclerAdapter;
+import sjsh.com.Activity.SelectRecordActivity;
 
 public class FragmentRecord extends Fragment {
 

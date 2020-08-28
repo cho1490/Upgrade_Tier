@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.util.DisplayMetrics;
 import android.view.SurfaceView;
 import android.view.View;
 
@@ -21,6 +20,11 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
+import sjsh.com.ExtendedDataHolder;
+import sjsh.com.R;
+import sjsh.com.Model.RecordData;
+import sjsh.com.RecordRecyclerAdapter;
 
 public class ScreenshotRecordActivity extends AppCompatActivity {
 
