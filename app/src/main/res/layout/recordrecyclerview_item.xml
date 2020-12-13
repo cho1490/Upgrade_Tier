@@ -5,7 +5,7 @@
     android:id="@+id/cardView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="8sp"
+    android:layout_margin="8dp"
     android:orientation="vertical"
     app:cardCornerRadius="5dp">
 
@@ -30,7 +30,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="00"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 android:gravity="center"
                 />
 
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="#FFFFFF"
-                android:textSize="12sp"
+                android:textSize="12dp"
                 android:gravity="center"/>
 
         </LinearLayout>
