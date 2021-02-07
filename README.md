@@ -14,7 +14,6 @@ Upgrade_Tier 프로젝트는 [OP.GG](https://www.op.gg/) 웹페이지를 크롤�
 * MPAndroidChart
 * firebase-analytics
 * material
-* imageView
 
 ## 소개  
 * **대전 기록**  
