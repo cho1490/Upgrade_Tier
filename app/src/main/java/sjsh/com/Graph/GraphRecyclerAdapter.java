@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Graph;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import sjsh.com.Model.GraphData;
+import sjsh.com.R;
 
 public class GraphRecyclerAdapter extends RecyclerView.Adapter<GraphRecyclerAdapter.ItemViewHolder> {
 

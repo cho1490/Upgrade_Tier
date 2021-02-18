@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Record;
 
 import android.graphics.Color;
 import android.util.SparseBooleanArray;
@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import sjsh.com.Model.RecordData;
+import sjsh.com.R;
 
 public class RecordRecyclerAdapter extends RecyclerView.Adapter<RecordRecyclerAdapter.ItemViewHolder> {
 

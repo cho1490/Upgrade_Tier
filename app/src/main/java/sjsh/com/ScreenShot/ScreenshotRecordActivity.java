@@ -1,4 +1,4 @@
-package sjsh.com.Activity;
+package sjsh.com.ScreenShot;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,10 +21,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import sjsh.com.ExtendedDataHolder;
+import sjsh.com.Sub.ExtendedDataHolder;
 import sjsh.com.R;
-import sjsh.com.Model.RecordData;
-import sjsh.com.RecordRecyclerAdapter;
+import sjsh.com.Record.RecordData;
+import sjsh.com.Record.RecordRecyclerAdapter;
 
 public class ScreenshotRecordActivity extends AppCompatActivity {
 

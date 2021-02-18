@@ -1,4 +1,4 @@
-package sjsh.com.Fragment;
+package sjsh.com.Best;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,7 +29,7 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
-import sjsh.com.LoadingDialog;
+import sjsh.com.Sub.LoadingDialog;
 import sjsh.com.R;
 
 public class FragmentBest extends Fragment {

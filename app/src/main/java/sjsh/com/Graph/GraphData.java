@@ -1,4 +1,4 @@
-package sjsh.com.Model;
+package sjsh.com.Graph;
 
 public class GraphData {
 

@@ -1,4 +1,4 @@
-package sjsh.com.Activity;
+package sjsh.com.Main;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -18,10 +18,10 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import sjsh.com.Fragment.FragmentBest;
-import sjsh.com.Fragment.FragmentGraph;
-import sjsh.com.Fragment.FragmentRecord;
-import sjsh.com.LoadingDialog;
+import sjsh.com.Best.FragmentBest;
+import sjsh.com.Graph.FragmentGraph;
+import sjsh.com.Record.FragmentRecord;
+import sjsh.com.Sub.LoadingDialog;
 import sjsh.com.R;
 
 public class SummonerActivity extends AppCompatActivity {

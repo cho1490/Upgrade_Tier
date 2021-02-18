@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ScreenshotRecordActivity">
+    tools:context=".ScreenShot.ScreenshotRecordActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/screenshot_recyclerView"

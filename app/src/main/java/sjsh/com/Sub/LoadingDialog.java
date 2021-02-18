@@ -1,4 +1,4 @@
-package sjsh.com;
+package sjsh.com.Sub;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import sjsh.com.R;
 
 public class LoadingDialog {
 
