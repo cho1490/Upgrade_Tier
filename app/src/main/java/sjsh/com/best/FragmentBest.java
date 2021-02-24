@@ -1,4 +1,4 @@
-package sjsh.com.Best;
+package sjsh.com.best;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,11 +15,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -27,9 +22,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import sjsh.com.Sub.LoadingDialog;
+import sjsh.com.util.LoadingDialog;
 import sjsh.com.R;
 
 public class FragmentBest extends Fragment {
@@ -37,7 +31,6 @@ public class FragmentBest extends Fragment {
     private View view;
 
     FrameLayout adContainerView;
-    AdView adView;
 
     boolean isBestChampion = false;
     boolean isError = false;
@@ -47,28 +40,14 @@ public class FragmentBest extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_best, container, false);
 
+        BestPresenter bestPresenter = new BestPresenter();
+
         adContainerView = view.findViewById(R.id.ad_view_container);
-        adView = new AdView(getContext());
-        adView.setAdUnitId("ca-app-pub-6713667729006874/8545645874");
-        adContainerView.addView(adView);
-        loadBanner();
+        adContainerView.addView(bestPresenter.loadBanner(view));
 
         getBest();
 
         return view;
-    }
-
-    private void loadBanner() {
-        List<String> testDevices = new ArrayList<>();
-        testDevices.add(AdRequest.DEVICE_ID_EMULATOR);
-
-        RequestConfiguration requestConfiguration
-                = new RequestConfiguration.Builder()
-                .setTestDeviceIds(testDevices)
-                .build();
-        MobileAds.setRequestConfiguration(requestConfiguration);
-        adView.setAdSize(AdSize.SMART_BANNER);
-        adView.loadAd(new AdRequest.Builder().build());
     }
 
     private void getBest() {

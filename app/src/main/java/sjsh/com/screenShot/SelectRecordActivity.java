@@ -1,4 +1,4 @@
-package sjsh.com.ScreenShot;
+package sjsh.com.screenShot;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,10 +21,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import sjsh.com.Sub.ExtendedDataHolder;
+import sjsh.com.util.ExtendedDataHolder;
 import sjsh.com.R;
-import sjsh.com.Record.RecordData;
-import sjsh.com.Record.RecordRecyclerAdapter;
+import sjsh.com.record.RecordData;
+import sjsh.com.record.RecordRecyclerAdapter;
 
 public class SelectRecordActivity extends AppCompatActivity {
 

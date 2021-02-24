@@ -1,4 +1,4 @@
-package sjsh.com.Record;
+package sjsh.com.record;
 
 import java.io.Serializable;
 

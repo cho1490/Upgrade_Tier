@@ -1,4 +1,4 @@
-package sjsh.com.Main;
+package sjsh.com.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
-import sjsh.com.Sub.LoadingDialog;
+import sjsh.com.util.LoadingDialog;
 import sjsh.com.R;
 
 

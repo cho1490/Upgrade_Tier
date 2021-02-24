@@ -1,4 +1,4 @@
-package sjsh.com.Record;
+package sjsh.com.record;
 
 import android.graphics.Color;
 import android.util.SparseBooleanArray;

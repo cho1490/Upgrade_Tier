@@ -1,8 +1,9 @@
-package sjsh.com.Main;
+package sjsh.com.main;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -18,10 +19,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import sjsh.com.Best.FragmentBest;
-import sjsh.com.Graph.FragmentGraph;
-import sjsh.com.Record.FragmentRecord;
-import sjsh.com.Sub.LoadingDialog;
+import sjsh.com.best.FragmentBest;
+import sjsh.com.graph.FragmentGraph;
+import sjsh.com.record.FragmentRecord;
+import sjsh.com.util.DownloadService;
+import sjsh.com.util.LoadingDialog;
 import sjsh.com.R;
 
 public class SummonerActivity extends AppCompatActivity {
@@ -56,6 +58,12 @@ public class SummonerActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         url = intent.getStringExtra("url");
+
+        DownloadService downloadService = new DownloadService();
+        downloadService.startService(url, getApplicationContext());
+
+        //SummonerPresenter summonerPresenter = new SummonerPresenter();
+        //summonerPresenter.loadData(url);
 
         getConnect();
 
@@ -162,7 +170,7 @@ public class SummonerActivity extends AppCompatActivity {
             try {
                 doc = Jsoup.connect(url).get();
             } catch (Exception e){
-                System.out.println("csh SummonerActivity Error : " + e.toString());
+                System.out.println("SummonerActivity Error : " + e.toString());
             }
 
             Element isSummoner = doc.selectFirst("div.SummonerLayout");
