@@ -59,11 +59,7 @@ public class SummonerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         url = intent.getStringExtra("url");
 
-        DownloadService downloadService = new DownloadService();
-        downloadService.startService(url, getApplicationContext());
-
-        //SummonerPresenter summonerPresenter = new SummonerPresenter();
-        //summonerPresenter.loadData(url);
+        DownloadService.INSTANCE.startService(url, getApplicationContext());
 
         getConnect();
 
@@ -162,6 +158,7 @@ public class SummonerActivity extends AppCompatActivity {
                 loadingDialog.setMessage(message);
                 loadingDialog.onButtonForFinish();
             }
+            Log.d("csh : 2" , DownloadService.INSTANCE.getRecordModel().size() + "ㅋ");
             super.onPostExecute(aVoid);
         }
 

@@ -8,12 +8,12 @@ data class RecordModel(
         var kill: String? = null,
         var death: String? = null,
         var assist: String? = null,
-        var kda_percent: String? = null,
-        var game_mode: String? = null,
-        var game_ago: String? = null,
+        var kdaPercent: String? = null,
+        var gameMode: String? = null,
+        var gameAgo: String? = null,
         var badge: String? = null,
-        var champion_url: String? = null,
-        var spell_url: ArrayList<String>? = arrayListOf(),
-        var rune_url: ArrayList<String>? = arrayListOf(),
-        var item_url: ArrayList<String>? = arrayListOf()
+        var championUrl: String? = null,
+        var spellUrl: ArrayList<String>? = arrayListOf(),
+        var runeUrl: ArrayList<String>? = arrayListOf(),
+        var itemUrl: ArrayList<String>? = arrayListOf()
 ): Serializable

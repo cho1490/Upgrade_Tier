@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import sjsh.com.util.DownloadService;
 import sjsh.com.util.ExtendedDataHolder;
 import sjsh.com.util.LoadingDialog;
 import sjsh.com.R;
@@ -303,8 +305,6 @@ public class FragmentRecord extends Fragment {
                     else if (game_info.child(3).text().equals("Remake"))
                         result.add("리");
 
-
-
                     time.add(game_info.child(4).text().split(" ")[0].replace("m", "분"));
                 }
 
@@ -316,7 +316,6 @@ public class FragmentRecord extends Fragment {
                         badge.add(getBadge(kda.parent().child(kda.parent().childrenSize()-1).child(0).text()));
                     else
                         badge.add("");
-
                 }
 
                 for (Element percent : kda_percentE) {
