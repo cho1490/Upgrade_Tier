@@ -9,11 +9,11 @@ Upgrade_Tier 프로젝트는 [OP.GG](https://www.op.gg/) 웹페이지를 크롤�
 * git
 
 ## 라이브러리  
-* glide
-* jsoup
+* Glide
+* Jsoup
 * MPAndroidChart
-* firebase-analytics
-* material
+* Firebase-analytics
+* Material
 
 ## 소개  
 * **대전 기록**  
