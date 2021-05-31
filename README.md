@@ -1,5 +1,5 @@
 ## Upgrade_Tier (롤티업)  
-다운로드 누적 500+  
+다운로드 누적 1000+  
 [롤티업 - 플레이 스토어](https://play.google.com/store/apps/details?id=sjsh.com)  
 
 Upgrade_Tier 프로젝트는 [OP.GG](https://www.op.gg/) 웹페이지를 크롤링하여 소환사의 데이터를 가져오는 프로젝트 입니다.  
@@ -35,8 +35,3 @@ Upgrade_Tier 프로젝트는 [OP.GG](https://www.op.gg/) 웹페이지를 크롤�
 
 <img src ="https://user-images.githubusercontent.com/51706367/107046481-0521e080-680a-11eb-93c3-c2dec9080501.png" width="165px"> <img src ="https://user-images.githubusercontent.com/51706367/107046488-06530d80-680a-11eb-88c0-8bb449baaa69.png" width="165px">
 
-## 후기  
-안드로이드 공부를 시작하고 처음으로 프로그래밍에 대한 재미를 느꼈습니다.  
-무엇이든 빠르게 만들어보고 싶었고 평소에 즐기는즐겨하는 게임인 롤(리그 오브 레전드) 관련 앱을 만들어야겠다고 생각했습니다.  
-첫 프로젝트라서 설계가 많이 부족했고 필요성을 느끼게 되었습니다.  
-열심히 해야겠다~!
