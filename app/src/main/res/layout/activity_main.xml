@@ -118,7 +118,7 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="105dp"
                 android:layout_marginEnd="5dp"
-                android:text="광고 보기"
+                android:text="광고"
                 android:textSize="16dp"
                 android:background="@drawable/edit_button1"
                 android:textColor="#FFFFFF"

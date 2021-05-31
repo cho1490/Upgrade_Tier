@@ -159,13 +159,15 @@ public class FragmentRecord extends Fragment {
                 gameName = "우르프";
             else if(game_mode.equals("Bot"))
                 gameName = "봇전";
-            else if(game_mode.equals("Special Mode")){
+            else if(game_mode.equals("Special Mode"))
                 gameName = "돌격! 넥서스";
-            }
+            else if(game_mode.equals("Clash"))
+                gameName = "격전";
             /*
             else{
                 System.out.println("csh : " + game_mode);
-            }*/
+            }
+            */
 
             return gameName;
         }

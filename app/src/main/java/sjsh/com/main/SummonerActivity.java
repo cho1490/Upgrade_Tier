@@ -158,7 +158,6 @@ public class SummonerActivity extends AppCompatActivity {
                 loadingDialog.setMessage(message);
                 loadingDialog.onButtonForFinish();
             }
-            Log.d("csh : 2" , DownloadService.INSTANCE.getRecordModel().size() + "ㅋ");
             super.onPostExecute(aVoid);
         }
 
