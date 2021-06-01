@@ -17,6 +17,7 @@ class BestPresenter() {
         MobileAds.setRequestConfiguration(requestConfiguration)
 
         adView = AdView(view.context)
+        //ca-app-pub-3940256099942544/6300978111
         adView.adUnitId = "ca-app-pub-6713667729006874/8545645874"
         adView.adSize = AdSize.SMART_BANNER
         adView.loadAd(AdRequest.Builder().build())

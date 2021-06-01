@@ -35,7 +35,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import sjsh.com.util.DownloadService;
 import sjsh.com.util.ExtendedDataHolder;
 import sjsh.com.util.LoadingDialog;
 import sjsh.com.R;
@@ -165,7 +164,7 @@ public class FragmentRecord extends Fragment {
                 gameName = "격전";
             /*
             else{
-                System.out.println("csh : " + game_mode);
+               Log.i("csh", game_mode);
             }
             */
 
@@ -218,7 +217,7 @@ public class FragmentRecord extends Fragment {
         private String getBadge(String Badge){
             String badgeName = "?";
 
-            //System.out.println("csh : "  + Badge);
+            //Log.i("csh", Badge);
 
             if(Badge.equals("Double Kill"))
                 badgeName = "더블킬";

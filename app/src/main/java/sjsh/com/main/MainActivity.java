@@ -2,15 +2,18 @@ package sjsh.com.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -41,42 +44,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {}
         });
-        mInterstitialAd = new InterstitialAd(MainActivity.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-6713667729006874/4863026514");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-        mInterstitialAd.setAdListener(new AdListener(){
-            @Override
-            public void onAdFailedToLoad(int i) {
-                String errorMsg = "";
-                loadingDialog.startLoadingDialog();
-                loadingDialog.onCancelable();
-                loadingDialog.offProgressBar();
-                if(AdRequest.ERROR_CODE_INTERNAL_ERROR == i){
-                    errorMsg = "서버에 연결 할 수 없습니다 :(";
-                }else if(AdRequest.ERROR_CODE_INVALID_REQUEST == i){
-                    errorMsg = "올바르지 않은 광고 입니다 :(";
-                }else if(AdRequest.ERROR_CODE_NETWORK_ERROR  == i){
-                    errorMsg = "네트워크에 연결할 수 없습니다 :(";
-                }else if(AdRequest.ERROR_CODE_NO_FILL == i){
-                    errorMsg = "시청 가능한 광고가 없습니다 :(";
-                }else{
-                    errorMsg = "오류 :(";
-                }
-                loadingDialog.setMessage(errorMsg);
-                loadingDialog.onButtonForStay();
-                super.onAdFailedToLoad(i);
-            }
-            @Override
-            public void onAdClosed() {
-                loadingDialog.startLoadingDialog();
-                loadingDialog.onCancelable();
-                loadingDialog.offProgressBar();
-                loadingDialog.setMessage("감사합니다 :)");
-                loadingDialog.onButtonForStay();
-                super.onAdClosed();
-            }
-        });
-
 
         btn_search = findViewById(R.id.btn_search);
         btn_search.setOnClickListener(new View.OnClickListener() {
@@ -91,21 +58,41 @@ public class MainActivity extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 }
                 else{
-                    loadingDialog.startLoadingDialog();
-                    loadingDialog.onCancelable();
-                    loadingDialog.offProgressBar();
-                    loadingDialog.setMessage("닉네임을 입력해주세요.");
-                    loadingDialog.onButtonForStay();
+                    dialogControl("닉네임을 입력해주세요.");
                 }
             }
         });
+
 
         lookAd = findViewById(R.id.lookAd);
         lookAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
+                AdRequest adRequest = new AdRequest.Builder().build(); //ca-app-pub-6713667729006874/4863026514
+                InterstitialAd.load(getApplicationContext(), "ca-app-pub-6713667729006874/4863026514", adRequest, new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        super.onAdLoaded(interstitialAd);
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        super.onAdFailedToLoad(loadAdError);
+                        // Handle the error
+                        Log.i("csh", loadAdError.getMessage() + " :(");
+                        mInterstitialAd = null;
+                    }
+                });
+
+                if (mInterstitialAd != null) {
+                    mInterstitialAd.show(MainActivity.this);
+                    dialogControl("감사합니다 :)");
+                }
+                else {
+                    dialogControl("시청 가능한 광고가 없습니다 :(");
                 }
             }
         });
@@ -114,13 +101,17 @@ public class MainActivity extends AppCompatActivity {
         payment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadingDialog.startLoadingDialog();
-                loadingDialog.onCancelable();
-                loadingDialog.offProgressBar();
-                loadingDialog.setMessage("마음만 받을게요 :)\n감사합니다.");
-                loadingDialog.onButtonForStay();
+                dialogControl("마음만 받을게요 :)\n감사합니다.");
             }
         });
+    }
+
+    private void dialogControl(String msg) {
+        loadingDialog.startLoadingDialog();
+        loadingDialog.onCancelable();
+        loadingDialog.offProgressBar();
+        loadingDialog.setMessage(msg);
+        loadingDialog.onButtonForStay();
     }
 
 }
