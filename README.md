@@ -1,5 +1,5 @@
-## Upgrade_Tier (롤티업)  
-다운로드 누적 1000+  
+## Upgrade_Tier (롤티업)
+다운로드 누적 1000+
 [롤티업 - 플레이 스토어](https://play.google.com/store/apps/details?id=sjsh.com)  
 
 Upgrade_Tier 프로젝트는 [OP.GG](https://www.op.gg/) 웹페이지를 크롤링하여 소환사의 데이터를 가져오는 프로젝트 입니다.  
